@@ -2,17 +2,17 @@
 
 namespace JeffersonGoncalves\Filament\QuebecVendors;
 
+use JeffersonGoncalves\FilamentPluginCore\BasePackageServiceProvider;
 use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class QuebecVendorsServiceProvider extends PackageServiceProvider
+class QuebecVendorsServiceProvider extends BasePackageServiceProvider
 {
+    public static string $name = 'filament-quebec-vendors';
+
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('filament-quebec-vendors')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigrations();
+            ->name(static::$name)
+            ->hasTranslations();
     }
 }
